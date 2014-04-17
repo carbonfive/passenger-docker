@@ -7,13 +7,9 @@ set -x
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C3173AA6
 echo deb http://ppa.launchpad.net/brightbox/ruby-ng/ubuntu precise main > /etc/apt/sources.list.d/brightbox.list
 
-## Phusion Passenger
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
-if [[ "$PASSENGER_ENTERPRISE" ]]; then
-	echo deb https://download:$PASSENGER_ENTERPRISE_DOWNLOAD_TOKEN@www.phusionpassenger.com/enterprise_apt precise main > /etc/apt/sources.list.d/passenger.list
-else
-	echo deb https://oss-binaries.phusionpassenger.com/apt/passenger precise main > /etc/apt/sources.list.d/passenger.list
-fi
+## Postgres
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
+echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 
 ## Chris Lea's Node.js PPA
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C7917B12

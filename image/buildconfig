@@ -1,3 +1,10 @@
 export LC_ALL=C
 export DEBIAN_FRONTEND=noninteractive
 minimal_apt_get_install='apt-get install -y --no-install-recommends'
+ruby21=1
+nodejs=1
+redis=1
+memcached=1
+postgresql=1
+unicorn=1
+final=1
